@@ -24,7 +24,7 @@ This benchmark can be run using the following commands:
 
 .. code-block::
 
-	$ pip install -U benchopt
+   $ pip install -U benchopt
    $ git clone https://github.com/benchopt/benchmark_nnls
    $ benchopt run benchmark_nnls
 
