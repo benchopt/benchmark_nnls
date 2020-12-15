@@ -1,8 +1,8 @@
 import numpy as np
 
 
-from benchopt.base import BaseSolver
-from benchopt.util import safe_import_context
+from benchopt import BaseSolver
+from benchopt import safe_import_context
 from benchopt.utils.stream_redirection import SuppressStd
 
 with safe_import_context() as import_ctx:
