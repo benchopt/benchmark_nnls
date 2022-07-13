@@ -28,7 +28,7 @@ class Solver(BaseSolver):
         try:
             with out:
                 self.w, _, _ = \
-                    nnls(self.X, m, n, self.y, w, zz, index, n_iter)
+                    nnls(self.X, m, n, self.y, w, zz, index, n_iter+1)
         except BaseException:
             print(out.output)
             raise
