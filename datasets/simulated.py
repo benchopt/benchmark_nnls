@@ -34,4 +34,4 @@ class Dataset(BaseDataset):
 
         data = dict(X=X, y=y)
 
-        return self.n_features, data
+        return data
