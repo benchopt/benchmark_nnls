@@ -14,7 +14,7 @@ class Dataset(BaseDataset):
     # the cross product for each key in the dictionary.
     parameters = {
         'n_samples, n_features': [(100, 5000), (100, 10000)],
-        'pos_data': [True,False],
+        'pos_data': [True, False],
     }
 
     def __init__(self, n_samples=10, n_features=50, pos_data=False, rho=0,
@@ -32,7 +32,7 @@ class Dataset(BaseDataset):
 
         X, y, _ = make_correlated_data(self.n_samples, self.n_features,
                                        rho=self.rho, random_state=rng,
-                                       pos_data = self.pos_data)
+                                       pos_data=self.pos_data)
 
         data = dict(X=X, y=y)
 
