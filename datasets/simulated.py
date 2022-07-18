@@ -1,4 +1,5 @@
 from benchopt import BaseDataset, safe_import_context
+from benchopt.datasets.simulated import make_correlated_data
 
 
 with safe_import_context() as import_ctx:
@@ -16,21 +17,22 @@ class Dataset(BaseDataset):
         'pos_data': [True,False],
     }
 
-    def __init__(self, n_samples=10, n_features=50, pos_data=False, random_state=27):
+    def __init__(self, n_samples=10, n_features=50, pos_data=False, rho=0,
+                 random_state=27):
         # Store the parameters of the dataset
         self.n_samples = n_samples
         self.n_features = n_features
         self.pos_data = pos_data
         self.random_state = random_state
+        self.rho = rho
 
     def get_data(self):
 
         rng = np.random.RandomState(self.random_state)
-        X = rng.randn(self.n_samples, self.n_features)
-        y = rng.randn(self.n_samples)
-        if self.pos_data:
-            X = np.abs(X)
-            y = np.abs(y)
+
+        X, y, _ = make_correlated_data(self.n_samples, self.n_features,
+                                       rho=self.rho, random_state=rng,
+                                       pos_data = self.pos_data)
 
         data = dict(X=X, y=y)
 
