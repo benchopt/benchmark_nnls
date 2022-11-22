@@ -1,0 +1,6 @@
+solver:
+  - cd
+  - scipy
+dataset:
+  - leukemia
+  - simulated[n_samples=200,n_features=200]

@@ -20,23 +20,23 @@ where n (or n_samples) stands for the number of samples, p (or n_features) stand
 Install
 --------
 
-This benchmark can be run using the following commands:
+To download and run the benchmark on a few solvers and datasets, use:
 
 .. code-block::
 
    $ pip install -U benchopt
    $ git clone https://github.com/benchopt/benchmark_nnls
-   $ benchopt run benchmark_nnls
+   $ benchopt run benchmark_nnls  --config simple_config.yml
 
-Apart from the problem, options can be passed to `benchopt run`, to restrict the benchmarks to some solvers or datasets, e.g.:
+
+Options can be passed to `benchopt run`, e.g. to restrict the benchmarks to some solvers or datasets:
 
 .. code-block::
 
-	$ benchopt run benchmark_nnls -s sklearn -d boston --max-runs 10 --n-repetitions 10
+	$ benchopt run benchmark_nnls -s scipy -d leukemia --max-runs 10 --n-repetitions 10
 
 
 Use `benchopt run -h` for more details about these options, or visit https://benchopt.github.io/api.html.
-
 
 
 .. |Build Status| image:: https://github.com/benchopt/benchmark_nnls/workflows/Tests/badge.svg
