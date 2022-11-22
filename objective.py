@@ -9,6 +9,8 @@ class Objective(BaseObjective):
         'fit_intercept': [False],
     }
 
+    min_benchopt_version = "1.3"
+
     def __init__(self, fit_intercept=False):
         self.fit_intercept = fit_intercept
 
@@ -28,5 +30,5 @@ class Objective(BaseObjective):
         else:
             return np.inf
 
-    def to_dict(self):
+    def get_objective(self):
         return dict(X=self.X, y=self.y, fit_intercept=self.fit_intercept)
