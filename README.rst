@@ -8,11 +8,11 @@ reproducible the comparisons of optimization algorithms.
 The Non-Negative Least Square consists in solving the following program:
 
 
-$$\min_{w \geq 0} \frac{1}{2} \|y - Xw\|^2_2$$
+$$\\min_{w \\geq 0} \\frac{1}{2} \\lVert y - Xw \\rVert^2_2$$
 
 where $n$ (or ``n_samples``) stands for the number of samples, $p$ (or ``n_features``) stands for the number of features and
 
-$$y \in \mathbb{R}^n, X = [x_1^\top, \dots, x_n^\top]^\top \in \mathbb{R}^{n \times p}$$
+$$y \\in \\mathbb{R}^n, X = [x_1^\\top, \\dots, x_n^\\top]^\\top \\in \\mathbb{R}^{n \\times p}$$
 
 Install
 --------
