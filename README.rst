@@ -3,7 +3,7 @@ Benchmark repository for Non-negative Least Square
 
 |Build Status| |Python 3.6+|
 
-BenchOpt is a package to simplify and make more transparent and
+Benchopt is a package to simplify and make more transparent and
 reproducible the comparisons of optimization algorithms.
 The Non-Negative Least Square consists in solving the following program:
 
