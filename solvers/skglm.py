@@ -3,7 +3,7 @@ from benchopt import BaseSolver, safe_import_context
 with safe_import_context() as import_ctx:
     import numpy as np
 
-    from skglm.penalties import NNLS
+    from skglm.penalties import PositiveConstraint
     from skglm.datafits import Quadratic
     from skglm.solvers import AndersonCD
     from skglm.estimators import GeneralizedLinearEstimator
@@ -30,7 +30,7 @@ class Solver(BaseSolver):
 
         self.clf = GeneralizedLinearEstimator(
             datafit=Quadratic(),
-            penalty=NNLS(),
+            penalty=PositiveConstraint(),
             solver=AndersonCD(tol=1e-9, fit_intercept=fit_intercept)
         ).fit(X, y)
 
