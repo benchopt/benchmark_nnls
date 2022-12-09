@@ -27,8 +27,8 @@ class Solver(BaseSolver):
         out = SuppressStd()
         try:
             with out:
-                self.w, _, _ = \
-                    nnls(self.X, m, n, self.y, w, zz, index, n_iter+1)
+                self.w, _, _ = nnls(
+                    self.X, m, n, self.y, w, zz, index, n_iter+1)
         except BaseException:
             print(out.output)
             raise
