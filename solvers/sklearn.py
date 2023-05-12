@@ -24,8 +24,15 @@ class Solver(BaseSolver):
         warnings.filterwarnings('ignore', category=ConvergenceWarning)
 
     def run(self, n_iter):
+        if n_iter == 0:
+            n_features = self.X.shape[1] + self.fit_intercept
+            self.coef = np.zeros(n_features)
+            return
+
         self.clf.max_iter = n_iter
         self.clf.fit(self.X, self.y)
 
+        self.coef = self.clf.coef_.flatten()
+
     def get_result(self):
-        return self.clf.coef_.flatten()
+        return self.coef
