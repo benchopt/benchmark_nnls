@@ -35,7 +35,7 @@ class Solver(BaseSolver):
         ).fit(X, y)
 
     def run(self, n_iter):
-        self.clf.max_iter = n_iter
+        self.clf.solver.max_iter = n_iter
         self.clf.fit(self.X, self.y)
 
     def get_result(self):
