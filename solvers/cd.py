@@ -35,7 +35,6 @@ class Solver(BaseSolver):
         else:
             self.w = self.cd(self.X, self.y, L, n_iter)
 
-    @staticmethod
     @njit
     def cd(X, y, L, n_iter):
         n_features = X.shape[1]
@@ -52,7 +51,6 @@ class Solver(BaseSolver):
                     R += diff * X[:, j]
         return w
 
-    @staticmethod
     @njit
     def sparse_cd(X_data, X_indices, X_indptr, y, L, n_iter):
         n_features = len(X_indptr) - 1
