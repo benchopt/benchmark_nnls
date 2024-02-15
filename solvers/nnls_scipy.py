@@ -1,9 +1,7 @@
 from benchopt import BaseSolver
 from benchopt import safe_import_context
-from benchopt.utils.stream_redirection import SuppressStd
 
 with safe_import_context() as import_ctx:
-    import numpy as np
     from scipy.optimize import _nnls
 
 
