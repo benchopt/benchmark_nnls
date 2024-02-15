@@ -35,4 +35,4 @@ class Solver(BaseSolver):
         self.coef = self.clf.coef_.flatten()
 
     def get_result(self):
-        return self.coef
+        return dict(beta=self.coef)
