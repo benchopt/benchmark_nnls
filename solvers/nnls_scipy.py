@@ -2,7 +2,7 @@ from benchopt import BaseSolver
 from benchopt import safe_import_context
 
 with safe_import_context() as import_ctx:
-    from scipy.optimize import _nnls
+    from scipy.optimize._nnls import _nnls
 
 
 class Solver(BaseSolver):
