@@ -3,7 +3,7 @@ import numpy as np
 
 
 class Objective(BaseObjective):
-    min_benchopt_version = "1.4"
+    min_benchopt_version = "1.5"
     name = "Non Negative Least Squares"
 
     parameters = {
