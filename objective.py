@@ -3,14 +3,12 @@ import numpy as np
 
 
 class Objective(BaseObjective):
-    min_benchopt_version = "1.3"
+    min_benchopt_version = "1.5"
     name = "Non Negative Least Squares"
 
     parameters = {
         'fit_intercept': [False],
     }
-
-    min_benchopt_version = "1.3"
 
     def __init__(self, fit_intercept=False):
         self.fit_intercept = fit_intercept
@@ -18,13 +16,13 @@ class Objective(BaseObjective):
     def set_data(self, X, y):
         self.X, self.y = X, y
 
-    def get_one_solution(self):
+    def get_one_result(self):
         n_features = self.X.shape[1]
         if self.fit_intercept:
             n_features += 1
-        return np.zeros(n_features)
+        return dict(beta=np.zeros(n_features))
 
-    def compute(self, beta):
+    def evaluate_result(self, beta):
         if (beta >= 0).all():
             diff = self.y - self.X.dot(beta)
             return .5 * diff.dot(diff)
