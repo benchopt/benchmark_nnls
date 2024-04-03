@@ -23,11 +23,10 @@ class Objective(BaseObjective):
         return dict(beta=np.zeros(n_features))
 
     def evaluate_result(self, beta):
-        if (beta >= 0).all():
-            diff = self.y - self.X.dot(beta)
-            return .5 * diff.dot(diff)
-        else:
-            return np.inf
+        # project onto feasible set
+        beta = np.maximum(0, beta)
+        diff = self.y - self.X.dot(beta)
+        return .5 * diff.dot(diff)
 
     def get_objective(self):
         return dict(X=self.X, y=self.y, fit_intercept=self.fit_intercept)
